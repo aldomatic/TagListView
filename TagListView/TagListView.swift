@@ -215,6 +215,14 @@ public class TagListView: UIView {
         tagViews = []
         rearrangeViews()
     }
+    
+    public func getAllTags() -> [String]{
+        var allTags:[String] = []
+        for tagView in tagViews {
+            allTags.append(tagView.titleLabel!.text!)
+        }
+        return allTags
+    }
 
     public func selectedTags() -> [TagView] {
         return tagViews.filter() { $0.selected == true }
